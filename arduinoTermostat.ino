@@ -12,8 +12,7 @@ void loop() {
 
   //trying to make methods and use them
   blinkLoop(1000);
-  blinkLoop(100);
-  
+  delay(1000000);  
 }
 
 // Method to loop 10 times with a set delay
