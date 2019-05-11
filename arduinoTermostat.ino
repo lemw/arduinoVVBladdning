@@ -84,3 +84,25 @@ void blinkLoop(int period) {
   }
   
 }
+
+// Method to read the temp of the outgoing water
+double ReadReturnTemp() {
+  // Need to know which number the Return water temp has
+  double returnTempValue = 0.0;
+  int iReturnTempAddress = 1;
+  // Use ENUM for addressess or how is that decided in the 
+  // one-wire protocol -- the order so to say - need to check
+  returnTempValue = ReadTemp(iReturnTempAddress);
+  return returnTempValue;
+}
+
+// Generic method for reading temp at a sensor with a 
+// number that is as input parameter
+double ReadTemp(int address) {
+  // Need to assess how this to be done...
+  // Send the command to get temperature readings 
+  sensors.requestTemperatures(); 
+  double returnTempValue = sensors.getTempCByIndex(0);
+  return returnTempValue;
+
+}
