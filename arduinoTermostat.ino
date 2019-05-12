@@ -19,6 +19,17 @@ int LEDPin = 12;
 int inPin = 11;
 int buttonPressed = 0;
 
+// This enum is planned for the state machine that will handle 
+// the different states of operation
+int enum workingState
+{
+  unInitialized,
+  default,
+  charging,
+  full,
+  discharging  
+};
+
 void setup() {
   // put your setup code here, to run once:
   // initialize digital pin LED_BUILTIN as an output.
